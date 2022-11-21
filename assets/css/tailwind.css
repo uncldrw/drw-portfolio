@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Switzer";
+  src: url("//cdn.fontshare.com/wf/HJHZ26OECMTXRH7JXPFC7EVIHDSLT2RA/LJRNLR7WCPF3PY3SZ7B2LHNUTQMFNCHL/4MCJYGQDIOOXHWSIIB2OYNDBEALJSOGN.woff2")
+      format("woff2"),
+    url("//cdn.fontshare.com/wf/HJHZ26OECMTXRH7JXPFC7EVIHDSLT2RA/LJRNLR7WCPF3PY3SZ7B2LHNUTQMFNCHL/4MCJYGQDIOOXHWSIIB2OYNDBEALJSOGN.woff")
+      format("woff"),
+    url("//cdn.fontshare.com/wf/HJHZ26OECMTXRH7JXPFC7EVIHDSLT2RA/LJRNLR7WCPF3PY3SZ7B2LHNUTQMFNCHL/4MCJYGQDIOOXHWSIIB2OYNDBEALJSOGN.ttf")
+      format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("//cdn.fontshare.com/wf/KDSQNRHYYJCWSLSNMQTKJOY7QNC2IBLM/HGYBIGJ4X7DYUETLTGW4BIVO3FCWLJUR/AFY5UJBPUVSDM77Q42DSHPT5JUNR7N4Y.woff2")
+      format("woff2"),
+    url("//cdn.fontshare.com/wf/KDSQNRHYYJCWSLSNMQTKJOY7QNC2IBLM/HGYBIGJ4X7DYUETLTGW4BIVO3FCWLJUR/AFY5UJBPUVSDM77Q42DSHPT5JUNR7N4Y.woff")
+      format("woff"),
+    url("//cdn.fontshare.com/wf/KDSQNRHYYJCWSLSNMQTKJOY7QNC2IBLM/HGYBIGJ4X7DYUETLTGW4BIVO3FCWLJUR/AFY5UJBPUVSDM77Q42DSHPT5JUNR7N4Y.ttf")
+      format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black;
+}
+
+data-scroll-container {
+  perspective: 1px;
+}
+
+.c-scrollbar {
+  @apply !mt-16 !h-[calc(100vh-4rem)];
+  z-index: 9999;
+  mix-blend-mode: difference !important;
+}
+
+.c-scrollbar_thumb {
+  mix-blend-mode: difference !important;
+  opacity: 1 !important;
+  @apply !bg-primary;
+}

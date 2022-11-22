@@ -1,7 +1,6 @@
 <template>
   <div data-scroll-container class="relative overflow-x-hidden">
     <Header />
-    <Menu />
     <main class="flex justify-center flex-col pt-10">
       <section
         data-scroll-section
@@ -24,7 +23,7 @@
           </div>
           <div class="text-primary text-2xl font-thin">
             <p class="font-extralight text-base max-w-sm">
-              Hi`,` mein Name ist <span class="font-semibold">Jason</span
+              Hi, mein Name ist <span class="font-semibold">Jason</span
               ><br /><br />
               Ich bin ein Webentwickler aus Nordrhein-Westfalen. Mich fasziniert
               Design und das Handwerk dahinter Geschichten mit Form und
@@ -71,7 +70,7 @@
           <div
             class="flex justify-between text-lg text-primary font-light lg:flex-row flex-col"
           >
-            <span class="mb-8 font-semibold italic">Vorwort.</span>
+            <span class="mb-8 italic">Vorwort.</span>
             <span class="max-w-xl"
               >We help startups and established businesses to develop new
               digital products, and streamline existing customer-facing online
@@ -90,19 +89,36 @@
 </template>
 
 <script setup>
+import { useMenuStore } from "~/stores/MenuStore";
+
 const { $LocomotiveScroll } = useNuxtApp();
+const menuStore = useMenuStore();
+
+let scroll;
+
+watch(menuStore, (value) => {
+  if (value.open) {
+    scroll.stop();
+  } else {
+    scroll.start();
+  }
+});
 
 onMounted(() => {
-  const scroll = new $LocomotiveScroll({
+  scroll = new $LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
     getDirection: true,
     multiplier: 0.6,
   });
 });
+
+useHead({
+  meta: [{ name: "theme-color", content: "#3B4434" }],
+});
 </script>
 
-<style scoped>
+<style>
 ._img {
   background: url("./assets/img/hero.jpg");
   background-size: cover;

@@ -16,6 +16,8 @@
     "@pinia/nuxt": "^0.4.4",
     "gsap": "^3.11.3",
     "locomotive-scroll": "^4.1.4",
-    "pinia": "^2.0.24"
+    "pinia": "^2.0.24",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0"
   }
 }
